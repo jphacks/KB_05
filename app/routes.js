@@ -20,6 +20,7 @@ module.exports = function(app) {
     // server routes ===========================================================
 
     app.post('/api/new/user', function (req, res) {
+
         var new_user = new user();
 
         new_user.name = req.body.user_name;
@@ -53,6 +54,7 @@ module.exports = function(app) {
     // /api/posts의 get event가 발생한다면
     app.get('/api/posts', function(req, res) {
         // post를 검색 그후 callback 함수에 posts의 인자 전달
+
         post.find(function(err, posts) {
             if (err)
                 res.send(err);
